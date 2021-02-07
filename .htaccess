@@ -1,0 +1,34 @@
+SetEnvIf X-Forwarded-Proto "https" HTTPS=on
+RewriteEngine on
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+ErrorDocument 404 /not-found-page.html
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(pinsandtribes\.com/index\.html)(:80)? [NC]
+RewriteRule ^(.*) http://www.pinsandtribes.com/$1 [R=301,L]
+DirectoryIndex index.html       
+order deny,allow
+
+
+# mod_rewrite start here
+
+RewriteEngine on 
+
+# does not apply to existing directories, meaning that if the folder exists on the server then don`t change anything and don`t run the Rule!
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# check for file in directory with .html extension
+
+RewriteCond %{REQUEST_FILENAME}\.html -f
+
+# Here i show the page that has the .html extension
+
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# NC means Non case sensitive, 

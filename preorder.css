@@ -1,0 +1,512 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: whitesmoke;
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* header */
+
+.header {
+  background-color: whitesmoke;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  margin-right: 2rem;
+ 
+}
+
+.nav-link {
+  color: blue;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 30px;
+  border-radius: 4px;
+  display: block;
+  font-family: "Ubuntu", sans-serif;
+}
+.nav-link:hover {
+  text-decoration: underline;
+
+}
+
+
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.logoimage {
+  width: 80px;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+
+.my-flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 10px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.flexup {
+  padding: 10px;
+  margin-right: 5%;
+  margin-left: 5%;
+
+}
+
+.flexdown {
+  padding: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.shopheader {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 70px;
+  color: #1768AC;
+  margin: 10px;
+ 
+}
+
+.shop-title {
+  font-size: 60px;
+  color: orangered;
+  text-shadow: 2px 2px black;
+}
+
+.shop-description  {
+  font-weight: bold;
+  font-size: 20px;
+  color: #2541B2;
+  word-wrap: break-word;
+}
+
+.shop-description a {
+  font-size: 30px;
+  border-radius: 20px;
+  border: 3px solid;
+  padding: 10px;
+  margin: 10px;
+  background-color:  orangered;
+  
+}
+
+.jumbophoto {
+  width: 500px;
+}
+
+@media screen and (max-width: 767px) {
+  .my-flex-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 15px;
+  }
+
+  .jumbophoto {
+    width: 300px;
+  }
+
+.shop-title {
+    font-size: 40px;
+    color: orangered;
+    text-shadow: 2px 2px black;
+  }
+
+.shop-description  {
+    font-weight: bold;
+    font-size: 20px;
+    color: #2541B2;
+  }
+}
+
+main {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.flex-container {
+  display: flex;
+  background-color: whitesmoke;
+  padding: 20px;
+  flex-direction: row;
+  text-align: center;
+  font-size: 30px;
+  margin: 20px;
+}
+
+.flex-container > div {
+  background-color: whitesmoke;
+  margin: 20px;
+  padding: 20px;
+  font-size: 20px;
+  flex: 20%;
+  border: 1px solid;
+  box-shadow: 5px 10px 18px #ef798a;
+}
+
+.flex-container a {
+ border: 1px solid;
+ padding: 10px;
+ border-radius: 10px;
+ margin: 2%;
+ background-color: lightblue;
+}
+
+
+.item-title {
+  font-weight: bold;
+  font-size: 30px;
+  color: orangered;
+}
+
+.item-description {
+  font-weight: bold;
+    font-size: 20px;
+    color: #2541B2;
+}
+
+.item-price {
+  font-weight: bold;
+  color: black;
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media screen and (max-width: 767px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+.shopheader {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  color: #1768AC;
+  margin: 10px;
+}
+
+main {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+}
+
+.flex-container2 {
+  display: flex;
+  background-color: whitesmoke;
+  padding: 20px;
+  flex-direction: row;
+  text-align: center;
+  font-size: 30px;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container2 > div {
+  background-color: whitesmoke;
+  margin: 20px;
+  padding: 20px;
+  font-size: 20px;
+  flex: 20%;
+  border: 1px solid;
+  box-shadow: 5px 10px 18px #ef798a;
+ 
+}
+
+.shopimg {
+  width: 150px;
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media screen and (max-width: 767px) {
+  .flex-container2 {
+    flex-direction: column;
+  }
+  .mado {
+    width: 200px;
+  }
+}
+
+.preorderheader {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 70px;
+  color: #32533d;
+  margin: 10px;
+}
+
+button {
+  border: 1px solid;
+  box-shadow: 5px 10px 18px #613f75;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10%;
+}
+
+button:hover {
+  opacity: 0.7;
+  background-color: #8db596;
+  color: blue;
+}
+
+.preorder-button {
+  border: 1px solid;
+  box-shadow: 5px 10px 18px #32533d;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10%;
+}
+
+.preorder-button:hover {
+  opacity: 0.7;
+  background-color: #8db596;
+  color: blue;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: whitesmoke;
+  color: black;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 5px 10px 18px #ef798a;
+}
+
+#myBtn:hover {
+  opacity: 0.7;
+  background-color: #8db596;
+  color: blue;
+}
+
+@media screen and (max-width: 767px) {
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    background-color: whitesmoke;
+    color: black;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 5px 10px 18px #ef798a;
+  }
+}
+
+img {
+  vertical-align: middle;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px;
+  border-radius: 10%;
+  justify-content: space-between;
+  border: 1px solid;
+  box-shadow: 5px 10px 18px #ef798a;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  background-color: #8db596;
+  color: blue;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+  text-align: center;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+  text-align: center;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+
+.copyright {
+  float: right;
+  margin-right: 5%;
+}
+
+.copyright p {
+  color: orangered;
+  font-weight: bold;
+  font-style: monospace;
+}
+
+.social {
+  float: center;
+}
+
+@media screen and(max-width: 500px) {
+
+.copyright {
+  float: right;
+}
+
+.copyright p {
+  color: orangered;
+  font-weight: bold;
+  font-style: monospace;
+}
+
+.social {
+  float: left;
+}
+  
+}
