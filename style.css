@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 5% 5%;
   background-color: whitesmoke;
   height: 100vh;
   font-family: "Ubuntu", sans-serif;
@@ -29,7 +29,6 @@ body {
   list-style: none;
   overflow: hidden;
   margin-right: 2rem;
- 
 }
 
 .nav-link {
